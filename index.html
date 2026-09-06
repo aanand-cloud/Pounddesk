@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Preview PoundDesk, a new way to compare supermarket and household deals across the UK." />
+  <title>PoundDesk — Compare more. Spend less.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">Preview site <span>•</span> Offers shown are examples until live retailer feeds are connected</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PoundDesk home">
+      <span class="brand-mark">£</span><span>Pound<span>Desk</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#deals">Deals</a>
+      <a href="#supermarkets">Supermarkets</a>
+      <a href="#categories">Categories</a>
+      <a href="#compare">Compare</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn saved-trigger" aria-label="View saved deals">♡ <span id="savedCount">0</span></button>
+      <button class="account-btn">Sign in</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> UK'S SMARTER DEALS DESK</div>
+        <h1>Good prices.<br><em>Proven</em> savings.</h1>
+        <p>Preview a clearer way to compare offers from Britain's leading supermarkets, ranked and easy to understand.</p>
+        <form class="search-box" id="searchForm">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.3-4.3m2.3-5.2A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z"/></svg>
+          <input id="searchInput" type="search" placeholder="Search milk, nappies, coffee..." aria-label="Search deals" />
+          <button type="submit">Find deals</button>
+        </form>
+        <div class="hero-trust"><span>✓ Independent deal score</span><span>✓ Clear loyalty prices</span><span>✓ No fake countdowns</span></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://pounddesk-deals.cozy-flame-1969.chatgpt.site/hero-groceries.png" alt="Fresh groceries and pantry essentials arranged on a dark surface" />
+        <div class="floating-card">
+          <div class="pulse"></div>
+          <div><strong>Preview catalogue</strong><small>sample deals</small></div>
+        </div>
+        <div class="saving-stamp"><small>Example saving</small><strong>48%</strong><span>preview</span></div>
+      </div>
+    </section>
+
+    <section class="retailer-strip" id="supermarkets">
+      <div class="section-intro"><span>Shop by supermarket</span><button id="allRetailers">View all 12 →</button></div>
+      <div class="retailer-list" role="list">
+        <button class="retailer active" data-retailer="all"><b class="r-all">ALL</b><span>All shops</span></button>
+        <button class="retailer" data-retailer="Tesco"><b class="r-tesco">TESCO</b><span>Tesco</span></button>
+        <button class="retailer" data-retailer="Sainsbury's"><b class="r-sains">Sainsbury's</b><span>Sainsbury's</span></button>
+        <button class="retailer" data-retailer="Asda"><b class="r-asda">ASDA</b><span>Asda</span></button>
+        <button class="retailer" data-retailer="Aldi"><b class="r-aldi">ALDI</b><span>Aldi</span></button>
+        <button class="retailer" data-retailer="M&S"><b class="r-ms">M&amp;S</b><span>M&amp;S</span></button>
+      </div>
+    </section>
+
+    <section class="deals-section" id="deals">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span></span> VERIFIED PICKS</div><h2>Today's strongest deals</h2><p>Ranked by real saving—not by who pays us.</p></div>
+        <div class="deal-controls">
+          <label>Sort by <select id="sortSelect"><option value="score">Best deal score</option><option value="saving">Biggest saving</option><option value="price">Lowest price</option></select></label>
+        </div>
+      </div>
+      <div class="filter-row" id="categories">
+        <button class="category active" data-category="all">All deals</button>
+        <button class="category" data-category="Food & drink">Food & drink</button>
+        <button class="category" data-category="Household">Household</button>
+        <button class="category" data-category="Baby">Baby</button>
+        <button class="category" data-category="Health & beauty">Health & beauty</button>
+        <button class="category" data-category="Home & kitchen">Home & kitchen</button>
+      </div>
+      <div class="deal-grid" id="dealGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><strong>No matching deals yet</strong><p>Try another product, category or supermarket.</p><button id="clearFilters">Clear filters</button></div>
+      <button class="load-more" id="loadMore">Show more sample deals <span>↓</span></button>
+    </section>
+
+    <section class="compare-panel" id="compare">
+      <div class="compare-copy">
+        <div class="eyebrow light"><span></span> BASKET CHECK</div>
+        <h2>Which supermarket wins your weekly shop?</h2>
+        <p>Build a list and compare the estimated total across supermarkets—including loyalty prices and pack sizes.</p>
+        <button id="tryCompare">Try basket comparison <span>→</span></button>
+      </div>
+      <div class="basket-card">
+        <div class="basket-top"><div><small>YOUR SAMPLE BASKET</small><strong>8 essentials</strong></div><span>Updated now</span></div>
+        <div class="shop-result winner"><div><b>1</b><span><strong>Asda</strong><small>Lowest estimated total</small></span></div><strong>£18.42</strong></div>
+        <div class="shop-result"><div><b>2</b><span><strong>Tesco</strong><small>With Clubcard</small></span></div><strong>£19.18</strong></div>
+        <div class="shop-result"><div><b>3</b><span><strong>Sainsbury's</strong><small>With Nectar</small></span></div><strong>£20.05</strong></div>
+        <div class="basket-save">Potential saving <strong>£5.63</strong></div>
+      </div>
+    </section>
+
+    <section class="how-section">
+      <div class="section-heading"><div><div class="eyebrow"><span></span> NO DEAL DRAMA</div><h2>Clear enough to trust.</h2></div></div>
+      <div class="principles">
+        <article><span>01</span><h3>We collect</h3><p>Offers from approved feeds, retailer pages and weekly promotions.</p></article>
+        <article><span>02</span><h3>We compare</h3><p>Prices, pack sizes and recent history are checked before ranking.</p></article>
+        <article><span>03</span><h3>You decide</h3><p>See the conditions clearly, then buy directly from the retailer.</p></article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div><span class="mail-icon">✦</span><h2>The worthwhile deals.<br>One useful email.</h2><p>Get a concise Friday roundup of genuine savings.</p></div>
+      <form id="newsletterForm"><input type="email" placeholder="you@example.com" required aria-label="Email address"><button>Join the Friday Desk</button><small>No spam. Unsubscribe whenever you like.</small></form>
+      <div class="newsletter-success" id="newsletterSuccess" hidden>You're on the list. Look out for the next Friday Desk ✓</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
+      <div><a class="brand footer-brand" href="#"><span class="brand-mark">£</span><span>Pound<span>Desk</span></span></a><p>Helping UK households compare more and spend less.</p></div>
+      <div><strong>Explore</strong><a href="#deals">Top deals</a><a href="#supermarkets">Supermarkets</a><a href="#categories">Categories</a></div>
+      <div><strong>Trust</strong><a href="#">How we rank deals</a><a href="#">Affiliate disclosure</a><a href="#">Report a problem</a></div>
+      <div><strong>Company</strong><a href="#">About</a><a href="#">Contact</a><a href="#">Privacy</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 PoundDesk. All rights reserved.</span><span>Prices and availability can change. Always check with the retailer.</span></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal" id="dealModal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
