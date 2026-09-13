@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Preview PoundDesk, a new way to compare supermarket and household deals across the UK." />
   <title>PoundDesk — Compare more. Spend less.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,7 +21,7 @@
     </nav>
     <div class="header-actions">
       <button class="icon-btn saved-trigger" aria-label="View saved deals">♡ <span id="savedCount">0</span></button>
-      <button class="account-btn">Sign in</button>
+      <button class="account-btn" type="button" disabled title="Accounts are coming soon">Coming soon</button>
     </div>
   </header>
 
@@ -65,7 +62,7 @@
 
     <section class="deals-section" id="deals">
       <div class="section-heading">
-        <div><div class="eyebrow"><span></span> VERIFIED PICKS</div><h2>Today's strongest deals</h2><p>Ranked by real saving—not by who pays us.</p></div>
+        <div><div class="eyebrow"><span></span> PREVIEW PICKS</div><h2>Example deals</h2><p>Sample listings demonstrating how PoundDesk will compare savings.</p></div>
         <div class="deal-controls">
           <label>Sort by <select id="sortSelect"><option value="score">Best deal score</option><option value="saving">Biggest saving</option><option value="price">Lowest price</option></select></label>
         </div>
@@ -91,7 +88,7 @@
         <button id="tryCompare">Try basket comparison <span>→</span></button>
       </div>
       <div class="basket-card">
-        <div class="basket-top"><div><small>YOUR SAMPLE BASKET</small><strong>8 essentials</strong></div><span>Updated now</span></div>
+        <div class="basket-top"><div><small>YOUR SAMPLE BASKET</small><strong>8 essentials</strong></div><span>Illustrative totals</span></div>
         <div class="shop-result winner"><div><b>1</b><span><strong>Asda</strong><small>Lowest estimated total</small></span></div><strong>£18.42</strong></div>
         <div class="shop-result"><div><b>2</b><span><strong>Tesco</strong><small>With Clubcard</small></span></div><strong>£19.18</strong></div>
         <div class="shop-result"><div><b>3</b><span><strong>Sainsbury's</strong><small>With Nectar</small></span></div><strong>£20.05</strong></div>
@@ -102,16 +99,15 @@
     <section class="how-section">
       <div class="section-heading"><div><div class="eyebrow"><span></span> NO DEAL DRAMA</div><h2>Clear enough to trust.</h2></div></div>
       <div class="principles">
-        <article><span>01</span><h3>We collect</h3><p>Offers from approved feeds, retailer pages and weekly promotions.</p></article>
-        <article><span>02</span><h3>We compare</h3><p>Prices, pack sizes and recent history are checked before ranking.</p></article>
+        <article><span>01</span><h3>We will collect</h3><p>Offers from authorised affiliate feeds and approved retailer sources.</p></article>
+        <article><span>02</span><h3>We will compare</h3><p>Prices, pack sizes and available price history before ranking live offers.</p></article>
         <article><span>03</span><h3>You decide</h3><p>See the conditions clearly, then buy directly from the retailer.</p></article>
       </div>
     </section>
 
     <section class="newsletter">
       <div><span class="mail-icon">✦</span><h2>The worthwhile deals.<br>One useful email.</h2><p>Get a concise Friday roundup of genuine savings.</p></div>
-      <form id="newsletterForm"><input type="email" placeholder="you@example.com" required aria-label="Email address"><button>Join the Friday Desk</button><small>No spam. Unsubscribe whenever you like.</small></form>
-      <div class="newsletter-success" id="newsletterSuccess" hidden>You're on the list. Look out for the next Friday Desk ✓</div>
+      <form id="newsletterForm"><input type="email" placeholder="Newsletter opening soon" disabled aria-label="Email address"><button type="button" disabled>Coming soon</button><small>We are not collecting email addresses during this preview.</small></form>
     </section>
   </main>
 
@@ -119,8 +115,8 @@
     <div class="footer-main">
       <div><a class="brand footer-brand" href="#"><span class="brand-mark">£</span><span>Pound<span>Desk</span></span></a><p>Helping UK households compare more and spend less.</p></div>
       <div><strong>Explore</strong><a href="#deals">Top deals</a><a href="#supermarkets">Supermarkets</a><a href="#categories">Categories</a></div>
-      <div><strong>Trust</strong><a href="#">How we rank deals</a><a href="#">Affiliate disclosure</a><a href="#">Report a problem</a></div>
-      <div><strong>Company</strong><a href="#">About</a><a href="#">Contact</a><a href="#">Privacy</a></div>
+      <div><strong>Trust</strong><a href="how-we-rank.html">How we rank deals</a><a href="affiliate-disclosure.html">Affiliate disclosure</a><a href="contact.html">Report a problem</a></div>
+      <div><strong>Company</strong><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a></div>
     </div>
     <div class="footer-bottom"><span>© 2026 PoundDesk. All rights reserved.</span><span>Prices and availability can change. Always check with the retailer.</span></div>
   </footer>
